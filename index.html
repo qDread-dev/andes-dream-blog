@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <title>Andes' Dreams</title>
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="home-button-wrapper">
+                <h1 id="home-button">Andes Dreams</h1>
+            </div>
+            <ul>
+                <div id="dream-logs-wrapper">
+                    <li id="dream-logs-hover-check">Dream Logs</li>
+                    <div id="dream-logs-main" class="hidden">
+                        <ul>
+                            <li id="dream-summer">Summer 2023</li>
+                            <div id="dream-summer-list">
+                                <ul>
+                                    <li id="test">EXAMPLE</li>
+                                    <li id="test2">EXAMPLE</li>
+                                    <li id="test">EXAMPLE</li>
+                                    <li id="test">EXAMPLE</li>
+                                </ul>
+                            </div>
+                            <li id="dream-winter">Winter 2022</li>
+                            <div id="dream-summer-list">
+                                <ul>
+                                    <li>EXAMPLE</li>
+                                    <li>EXAMPLE</li>
+                                    <li>EXAMPLE</li>
+                                    <li>EXAMPLE</li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div id="navbar-bottom">
+                    <ul>
+                        <li>YouTube</li>
+                        <li>Discord</li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="dream-wrapper">
+            <h1>Dream Will Appear Here</h1>
+        </div>
+        <script>
+            const dreamWrapper = document.querySelector("#dream-wrapper");
+            
+            let dreamLogsHoverCheck = document.getElementById("dream-logs-hover-check");
+            let dreamLogsMain = document.getElementById("dream-logs-main");
+            let dreamSummer = document.getElementById("dream-summer");
+            let dreamWiner = document.getElementById("dream-winter");
+            let li = document.getElementsByTagName("li");
+            let homeButton = document.getElementById("home-button");
 
+
+            document.onload = function() {
+                $(document).ready(function(){
+                    $('#dream-wrapper').load(`./pages/home.html`);
+                });
+            }   
+            const liPressed = e => {
+                $(document).ready(function(){
+                    $('#dream-wrapper').load(`./pages/dream-logs/${e.target.id}.html`);
+                });
+            }
+            for (let listItem of li) {
+                listItem.addEventListener("click", liPressed);
+            }
+
+            dreamLogsHoverCheck.addEventListener("mouseover", function() {
+                dreamLogsMain.classList.remove("hidden");
+            });
+            dreamLogsMain.addEventListener("mouseleave", function() {
+                dreamLogsMain.classList.add("hidden");
+            });
+
+            homeButton.addEventListener("click", function() {
+                $(document).ready(function(){
+                    $('#dream-wrapper').load(`./pages/home.html`);
+                });
+            });
+        </script>
+        
+    </body>
+</html>

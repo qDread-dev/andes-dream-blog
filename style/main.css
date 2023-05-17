@@ -1,0 +1,92 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root{
+    --text: #ffffff;
+    --background: rgb(7, 8, 8);
+    --primary-button: rgb(67, 70, 69);
+    --secondary-button: rgb(15, 16, 15);
+    --accent: rgb(62, 48, 126);
+}
+
+body{
+    background-color: var(--accent);
+    font-family: 'Ubuntu', sans-serif;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+
+#navbar {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:teal;
+    height: 100%;
+    width: 20%;
+}
+#navbar h1{
+    text-align: center;
+}
+#navbar ul{
+    list-style-type: none;
+    height:30%
+}
+
+#navbar-bottom{
+    position: absolute;
+    bottom:0;
+    left:0;
+    margin-bottom:40px;
+}
+#dream-logs-wrapper{
+    position:relative;
+    height:20px;
+    width: 200px;
+}
+#dream-logs-main{
+    position:absolute;
+    bottom:1;
+    right:0;
+    width:100%;
+}
+#dream-logs-hover-check{
+    z-index: 1;
+}
+
+#dream-logs-main li{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+#dream-wrapper{
+    position:absolute;
+    top:0;
+    right:0;
+    width:80%;
+    height:100%;
+    display: flex;
+    background-color: aqua;
+    justify-content: flex-start;
+    overflow-wrap: normal;
+    flex-direction: column;
+    text-align: center;
+}
+
+#dream-title{
+    width:100%;
+    text-align: center;
+}
+
+#dream-log-content{
+    width:100%;
+    text-align: center;
+}
+#home-button-wrapper{
+    cursor: pointer;
+    user-select: none;
+}

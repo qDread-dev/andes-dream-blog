@@ -10,19 +10,22 @@
 }
 
 body{
-    background-color: var(--accent);
+    background-color: #0d0205;
     font-family: 'Ubuntu', sans-serif;
+    color: #fae5ea;
     width:100vw;
     height:100vh;
     overflow: hidden;
 }
-
+h1{
+    color:#d4254b;
+}
 #navbar {
     display: block;
     position:absolute;
     top:0;
     left:0;
-    background-color:teal;
+    background-color:#000000;
     height: 100%;
     width: 20%;
 }
@@ -39,6 +42,7 @@ body{
     bottom:0;
     left:0;
     margin-bottom:40px;
+    color:#d4254b;
 }
 #dream-logs-wrapper{
     position:relative;
@@ -70,7 +74,7 @@ body{
     width:80%;
     height:100%;
     display: flex;
-    background-color: aqua;
+    background-color: #0a050b;
     justify-content: flex-start;
     overflow-wrap: normal;
     flex-direction: column;
@@ -89,4 +93,9 @@ body{
 #home-button-wrapper{
     cursor: pointer;
     user-select: none;
+    color:#d4254b;
+}
+
+#navbar-bottom li{
+    cursor: pointer;
 }

@@ -19,7 +19,7 @@
                             <div id="dream-summer-list">
                                 <ul>
                                     <li id="test">EXAMPLE</li>
-                                    <li id="test2">EXAMPLE</li>
+                                    <li id="test2">Test</li>
                                     <li id="test">EXAMPLE</li>
                                     <li id="test">EXAMPLE</li>
                                 </ul>
@@ -38,8 +38,8 @@
                 </div>
                 <div id="navbar-bottom">
                     <ul>
-                        <li>YouTube</li>
-                        <li>Discord</li>
+                        <li id="youtube-link">YouTube</li>
+                        <li id="discord-link">Discord</li>
                     </ul>
                 </div>
             </ul>
@@ -56,7 +56,7 @@
             let dreamWiner = document.getElementById("dream-winter");
             let li = document.getElementsByTagName("li");
             let homeButton = document.getElementById("home-button");
-
+            let youtubeElem = document.getElementById("youtube-link");
 
             window.onload = function() {
                 $(document).ready(function(){
@@ -84,7 +84,9 @@
                     $('#dream-wrapper').load(`./pages/home.html`);
                 });
             });
+            youtubeElem.addEventListener("click", function() {
+                window.open("https://www.youtube.com/@andesarcher7559");
+            });
         </script>
-        
     </body>
 </html>

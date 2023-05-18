@@ -2,12 +2,30 @@
     <h1>Loaded frfr22222</h1>
 </div>
 <div id="dream-log-content">
-    <p>WOO</p>
+    <p>Audio Version</p>
 </div>
-
 <div id="player"></div>
-<button id="playPause" onclick="playPause()">Play / Pause</button>
+<progress id="progress-bar" max="100"></progress>
+<div id="button-wrapper">
+    <button id="rewind" onclick="rewind()">-10s</button>
+    <button id="playPause" onclick="playPause()">Play</button>
+    <button id="fast-foward" onclick="forward()">+10s</button>
+</div>
 <script>
+
+    function rewind(){
+        player.seekTo(player.getCurrentTime() - 10);
+    }
+    function forward(){
+        player.seekTo(player.getCurrentTime() + 10);
+    }
+
+    function updateProgressBar(){
+    // Update the value of our progress bar accordingly.
+    $('#progress-bar').val(player.getCurrentTime() / player.getDuration() * 100);
+    }
+
+    setInterval(updateProgressBar, 1000);
     let playPauseBtn = document.getElementById("playPause");
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -15,8 +33,8 @@
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            height: '100',
-            width: '100',
+            height: '0',
+            width: '0',
             videoId: 'dQw4w9WgXcQ',
             events: {'onStateChange': onPlayerStateChange }
       });
@@ -33,7 +51,6 @@
             default:
                 break;
         }
-        
     }
 
     function playPause(){
@@ -44,3 +61,27 @@
         }
     }
 </script>
+<style>
+    #progress-bar{
+        width: 100%;
+        appearance: none;
+    }
+    #progress-bar::-webkit-progress-bar{
+        border-radius: 10px;
+    }
+    #progress-bar::-webkit-progress-value{
+        background-color: #d4254b;
+        border-radius: 10px;
+    }
+    #button-wrapper{
+        margin-top: 10px;
+    }
+    button{
+        background-color:#dc385b;
+        border-color: transparent;
+        border-radius: 10px;
+    }
+    #playPause{
+        width:50px;
+    }
+</style>

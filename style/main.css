@@ -75,7 +75,7 @@ h1{
     height:100%;
     display: flex;
     background-color: #0a050b;
-    background-image: radial-gradient(hsla(347, 70%, 49%, 0.3), #0a050b);
+    background-image: radial-gradient(hsla(347, 70%, 49%, 0.2), #0a050b);
     justify-content: flex-start;
     overflow-wrap: normal;
     flex-direction: column;

@@ -1,6 +1,21 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 :root{
     --text: #ffffff;
     --background: rgb(7, 8, 8);
@@ -35,6 +50,14 @@ h1{
 #navbar ul{
     list-style-type: none;
     height:30%
+}
+#dream-logs-hover-check:hover #dream-logs-main{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+#dream-logs-hover-check #dream-logs-main{
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
 }
 
 #navbar-bottom{

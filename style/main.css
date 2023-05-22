@@ -1,5 +1,13 @@
 /* Font */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(../fonts/Lasting\ Sketch.ttf);
+ }
+ @font-face {
+    font-family: Title;
+    src: url(../fonts/Dreamy\ Land\ Medium.ttf);
+ }
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -25,24 +33,41 @@
 }
 
 body{
-    background-color: #0d0205;
+    background-color: #16070f;
+    background-image: radial-gradient(hsla(347, 70%, 49%, 0.2), #0a050b);
+    overflow: visible;
     font-family: 'Ubuntu', sans-serif;
     color: #fae5ea;
     width:100vw;
     height:100vh;
-    overflow: hidden;
 }
 h1{
     color:#d4254b;
+    font-family: 'Title', sans-serif;
 }
 #navbar {
-    display: block;
     position:absolute;
+
     top:0;
-    left:0;
-    background-color:#000000;
+    left:-20%;
+    background-color:#ffdbdb;
+    border-radius: 0px 0rem 1rem 0px;
     height: 100%;
+    color:#d4254b;
     width: 20%;
+    transition-duration: 1s;
+}
+#navbar:hover {
+    left:0;
+    transition-duration: .5s;
+}
+#arrow {
+    position: absolute;
+left:98%;
+padding: 10px;
+overflow: visible;
+border-radius: 0px 1rem 1rem 0px;
+background-color:#ffdbdb;
 }
 #navbar h1{
     text-align: center;
@@ -94,11 +119,10 @@ h1{
     position:absolute;
     top:0;
     right:0;
-    width:80%;
+    width:100%;
     height:100%;
     display: flex;
-    background-color: #0a050b;
-    background-image: radial-gradient(hsla(347, 70%, 49%, 0.2), #0a050b);
+
     justify-content: flex-start;
     overflow-wrap: normal;
     flex-direction: column;
@@ -122,4 +146,14 @@ h1{
 
 #navbar-bottom li{
     cursor: pointer;
+}
+
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+video {
+    border-radius : 1rem;
+    text-align: center;
 }
